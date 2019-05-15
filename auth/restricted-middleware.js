@@ -14,7 +14,7 @@ module.exports = (req, res, next) => {
         else {
           //token is valid and was able to be decoded
           req.decodedJwt = decodedtoken //will make it available to the rest of the api. 
-          console.log("decode jwt", req.decodedJwt)
+          
   
           next();
         }

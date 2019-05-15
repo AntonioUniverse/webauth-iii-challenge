@@ -2,7 +2,7 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken')
 const secrets = require('../config/secret')
-const Users = require('../users/users-model.js')
+const Users = require('../user/user-model')
 
 router.post('/register', (req, res) => {
     let user = req.body;
@@ -51,3 +51,4 @@ router.post('/register', (req, res) => {
   }
   return jwt.sign(payload,secrets.jwtSecret,options) // this method runs in order
   }
+  module.exports = router;
