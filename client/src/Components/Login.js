@@ -5,7 +5,7 @@ export default class Login extends Component {
    state = {
        username: 'sam',
        password: 'pass',
-       
+      
    }
 
 
@@ -58,7 +58,8 @@ handleSubmit = e =>{
 
     axios.post(endpoint,this.state)
     .then(res => {
-        console.log(res)
+        localStorage.setItem('token', res.data.token)
+        this.props.history.push('/users')
     }).catch( err =>{
         console.error('Could not log in', err )
     })
